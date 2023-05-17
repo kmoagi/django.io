@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mysite',
+    'django.contrib.gis',
 ]
 AUTH_USER_MODEL = 'mysite.CustomUser'
 
