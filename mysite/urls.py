@@ -16,10 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mysite import views
+#from mysite import views
+from mysite.views import ProfileView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    
+    path('profile/<int:pk>/', ProfileView.as_view(), name='profile'),
    
 ]

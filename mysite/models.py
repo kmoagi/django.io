@@ -1,4 +1,5 @@
 from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import User
 from django.db import models
 from django.contrib.gis.db import models
 
@@ -10,3 +11,10 @@ class CustomUser(AbstractUser):
 
     def __str__(self):
         return self.username
+    
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    location = models.PointField(null=True, blank=True)
+
+    def __str__(self):
+        return self.user.username    

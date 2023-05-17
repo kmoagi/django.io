@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mysite',
     'django.contrib.gis',
+    'profiles',
 ]
 AUTH_USER_MODEL = 'mysite.CustomUser'
 
