@@ -24,5 +24,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('profile/<int:pk>/', ProfileView.as_view(), name='profile'),
     path('user-locations/', views.user_locations, name='user_locations'),
-   
+    path('profile/', views.profile, name='profile'),
 ]

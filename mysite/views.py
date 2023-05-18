@@ -29,10 +29,13 @@ class ProfileView(TemplateView):
 # the user to be logged in (@login_required
 
 
+#login_required decorator is used to ensure that only authenticated
+#  users can access the profile page
+
 @login_required
 def profile(request):
-    profile = request.user.profile
-    return render(request, 'profiles/profile.html', {'profile': profile})
+    user = request.user
+    return render(request, 'profiles/profile.html', {'user': user})
 
 @login_required
 def edit_profile(request):
