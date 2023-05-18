@@ -3,7 +3,7 @@ from django.urls import reverse
 
 #class that will handle the authentication and authorization checks for accessing the admin page
 
-# If the user is not a superuser, it redirects them to the admin login page.
+# If the user is not a superuser, it redirects them to the admin login page..
 
 class AdminRestrictMiddleware:
     def __init__(self, get_response):
