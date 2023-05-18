@@ -32,13 +32,25 @@
         }).addTo(map);
 
         var users = JSON.parse('{{ users|safe }}');
+       
+
+        //the forEach loop that creates markers for each user location. Inside the loop,
+        // we define the popupContent variable that contains the HTML content for the popup
+        //The popupContent variable includes the user's username, email, and location
+        
         users.forEach(function (user) {
-            if (user.profile.location) {
-                L.marker([user.profile.location.y, user.profile.location.x])
-                    .addTo(map)
-                    .bindPopup(user.username);
-            }
-        });
+           if (user.profile.location) {
+               var marker = L.marker([user.profile.location.y, user.profile.location.x])
+               .addTo(map);
+
+               var popupContent = '<h3>' + user.username + '</h3>' +
+                   '<p>Email: ' + user.email + '</p>' +
+                   '<p>Location: ' + user.profile.location + '</p>';
+
+               marker.bindPopup(popupContent);
+           }
+       });
+       
     </script>
 </body>
 </html>
