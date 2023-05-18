@@ -18,9 +18,11 @@ from django.contrib import admin
 from django.urls import path
 #from mysite import views
 from mysite.views import ProfileView
+from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('profile/<int:pk>/', ProfileView.as_view(), name='profile'),
+    path('user-locations/', views.user_locations, name='user_locations'),
    
 ]
