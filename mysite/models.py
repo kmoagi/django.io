@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.models import User
 from django.db import models
@@ -13,7 +14,7 @@ class CustomUser(AbstractUser):
         return self.username
     
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(settings.AUTH_User_MODEL, on_delete=models.CASCADE)
     location = models.PointField(null=True, blank=True)
 
     def __str__(self):

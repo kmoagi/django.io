@@ -2,6 +2,13 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
 from .forms import ProfileForm
+from django.views.generic import TemplateView
+
+
+class ProfileView(TemplateView):
+    template_name = 'profile.html'
+
+
 
 # two views: profile to display the user's profile and 
 # edit_profile to handle the profile editing. Both views require 
