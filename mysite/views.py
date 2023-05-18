@@ -4,6 +4,20 @@ from django.shortcuts import render, redirect
 from .forms import ProfileForm
 from django.views.generic import TemplateView
 
+#created a new views file to render the map page
+
+from django.contrib.auth.models import User
+from django.shortcuts import render
+
+
+# we retrieve all registered users who have a non-null location and
+#  include the associated profile using select_related. 
+# We pass the users queryset to the map.html template.
+
+def user_locations(request):
+    users = User.objects.exclude(profile__location__isnull=True).select_related('profile')
+    return render(request, 'map.html', {'users': users})
+
 
 class ProfileView(TemplateView):
     template_name = 'profile.html'
