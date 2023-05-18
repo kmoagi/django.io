@@ -43,8 +43,10 @@ INSTALLED_APPS = [
     'mysite',
     'django.contrib.gis',
     'profiles',
-    'django.contrib.gis',
+
 ]
+
+
 AUTH_USER_MODEL = 'mysite.CustomUser'
 
 MIDDLEWARE = [
@@ -55,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'mysite.middleware.AdminRestrictMiddleware',
 ]
 
 ROOT_URLCONF = 'mysite.urls'
