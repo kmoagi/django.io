@@ -8,7 +8,7 @@ to view the map showing all registered users' locations
 #Issues:
 
 GDAL
-Could not install the GDAL library (tried "gdal306", "gdal305", "gdal304", "gdal303", "gdal302", "gdal301", "gdal300", "gdal204", "gdal203", "gdal202"). All whl's not supported by my system.
+GDAL_LIBRARY_PATH is not recognising my actual path to the GDAL library on my system
 
 
 GIS

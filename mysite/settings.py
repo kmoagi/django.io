@@ -13,7 +13,11 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from pathlib import Path
 
+# os.environ['GDAL_LIBRARY_PATH'] = 'c:\users\beaversmoagi0707\appdata\local\programs\python\python39\lib\site-packages'
 
+
+GDAL_LIBRARY_PATH = 'c:\users\beaversmoagi0707\appdata\local\programs\python\python39\lib\site-packages'
+os.environ['GDAL_LIBRARY_PATH'] = GDAL_LIBRARY_PATH
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -91,7 +95,7 @@ DATABASES = {
     }
 }
 
-GDAL_LIBRARY_PATH = os.environ.get('GDAL_LIBRARY_PATH')
+
 
 
 # Password validation
